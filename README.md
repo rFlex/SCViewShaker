@@ -9,7 +9,7 @@ A highly configurable UIView category for shaking a view. You start shaking your
 
 ## Usage
 
-SCViewShaker works as a category on UIView. It provides the following new methods:
+SCViewShaker works as a category on UIView. It provides the following methods:
      
 ```objective-c
 - (void)beginShakingWithOptions:(SCShakeOptions)shakeOptions force:(CGFloat)force duration:(CGFloat)duration iterationDuration:(CGFloat)iterationDuration completionHandler:(ShakeCompletionHandler)completionHandler
@@ -28,11 +28,54 @@ iterationDuration is how long each shake iteration will last. You may want to se
 
 **completionHandler**, if not null, is the block that will be invoked when the shake finishes.
 
-
-Simple example
+#### Simple example
 
 ```objective-c
 UIView *view = ...; // Grab a view from somewhere
 [view beginShakingWithOptions:SCShakeOptionsDirectionRotate | SCShakeOptionsForceInterpolationExpDown | SCShakeOptionsAtEndRestart | SCShakeOptionsAutoreverse force:0.15 duration:1 iterationDuration:0.03 completionHandler:nil];
-```    
-    
+```
+
+## Options
+
+#### Direction
+
+The direction affects how the visual effect of the shake effect. All value bounds shown here are based on a force of 1.
+
+**SCShakeOptionsDirectionRotate**: The view will rotate from -90° to 90°.
+
+**SCShakeOptionsDirectionHorizontal**: The view will move horizontally from -frameWidth to +frameWidth.
+
+**SCShakeOptionsDirectionVertical**: The view will move vertically from -frameHeight to +frameHeight.
+
+**SCShakeOptionsDirectionHorizontalAndVertical**: The view will randomly move horizontally or vertically.
+
+
+#### Force interpolation
+
+The force interpolation affects how the force changes in the time.
+
+**SCShakeOptionsForceInterpolationNone**: The force will remain always the same as the one you provided.
+
+**SCShakeOptionsForceInterpolationLinearUp**: The force will linearly changes from 0 to the one you provided.
+
+**SCShakeOptionsForceInterpolationLinearDown**: The force will linearly changes from the one you provided to zero.
+
+**SCShakeOptionsForceInterpolationExpUp**: The force will exponentialy changes from 0 to the one you provided.
+
+**SCShakeOptionsForceInterpolationExpDown**: The force will exponentialy changes from the one you provided to zero.
+
+**SCShakeOptionsForceInterpolationRandom**: The force will randomly change between 0 and the one you provided.
+
+#### Action at end
+
+The action at end defines what should happen when the shake completes
+
+**SCShakeOptionsAtEndRestart**: The shake will be restarted automatically from the beginning.
+
+**SCShakeOptionsAtEndComplete**: The shake will stop.
+
+**SCShakeOptionsAtEndContinue**: The shake will contnue endlessly. The force won't change anymore when it reaches the duration.
+
+#### Misc options
+
+**SCShakeOptionsAutoreverse**: When the shake reaches the end, the shake will continue in the reverse order. Setting this value will double the effective **duration**.
