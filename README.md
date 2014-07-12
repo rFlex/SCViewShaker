@@ -79,3 +79,10 @@ The action at end defines what should happen when the shake completes
 #### Misc options
 
 **SCShakeOptionsAutoreverse**: When the shake reaches the end, the shake will continue in the reverse order. Setting this value will double the effective **duration**.
+
+## Podfile
+If you are using cocoapods, you can use this project with the following Podfile
+
+```ruby
+pod "SCViewShaker", "~> 1.0.0"
+```
