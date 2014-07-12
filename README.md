@@ -39,7 +39,7 @@ UIView *view = ...; // Grab a view from somewhere
 
 #### Direction
 
-The direction affects how the visual effect of the shake effect. All value bounds shown here are based on a force of 1.
+The direction affects the visual effect of the shake effect. All value bounds shown here are based on a force of 1.
 
 **SCShakeOptionsDirectionRotate**: The view will rotate from -90° to 90°.
 
