@@ -3,7 +3,7 @@ SCViewShaker
 
 
 ## About
-A highly configurable UIView category for shaking a view. You start shaking your views with a one liner :). It supports a lot of a few different shaking styles (horizontal, vertical, rotate) and let you configure the duration, the speed and the shake strength.
+A highly configurable UIView category for shaking a view. You start shaking your views with a one liner :). It supports a few different shaking styles (horizontal, vertical, rotate) and let you configure the duration, the speed and the shake strength.
 
 ![](shake.gif)
 
