@@ -3,7 +3,7 @@ SCViewShaker
 
 
 ## About
-A highly configurable UIView category for shaking a view. You start shaking your views with a one liner :).
+A highly configurable UIView category for shaking a view. You start shaking your views with a one liner :). It supports a few different shaking styles (horizontal, vertical, rotate) and let you configure the duration, the speed and the shake strength.
 
 ![](shake.gif)
 
@@ -81,3 +81,10 @@ The action at end defines what should happen when the shake completes
 #### Misc options
 
 **SCShakeOptionsAutoreverse**: When the shake reaches the end, the shake will continue in the reverse order. Setting this value will double the effective **duration**.
+
+## Podfile
+If you are using cocoapods, you can use this project with the following Podfile
+
+```ruby
+pod "SCViewShaker", "~> 1.0.0"
+```
