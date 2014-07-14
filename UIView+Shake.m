@@ -37,7 +37,11 @@
 
 static const char *ShakeInfoKey = "ShakeInfo";
 
-- (void)beginShakingWithOptions:(SCShakeOptions)shakeOptions force:(CGFloat)force duration:(CGFloat)duration iterationDuration:(CGFloat)iterationDuration completionHandler:(ShakeCompletionHandler)completionHandler {
+- (void)shake {
+    [self shakeWithOptions:kDefaultShakeOptions force:kDefaultShakeForce duration:kDefaultShakeDuration iterationDuration:kDefaultShakeIterationDuration completionHandler:nil];
+}
+
+- (void)shakeWithOptions:(SCShakeOptions)shakeOptions force:(CGFloat)force duration:(CGFloat)duration iterationDuration:(CGFloat)iterationDuration completionHandler:(ShakeCompletionHandler)completionHandler {
     SCShakeInfo *shakeInfo = [self shakeInfo];
     
     shakeInfo.options = shakeOptions;
@@ -125,7 +129,7 @@ static const char *ShakeInfoKey = "ShakeInfo";
                     shakeInfo.startTime = CACurrentMediaTime();
                 } else if (!HAS_OPT(shakeInfo.options, SCShakeOptionsAtEndContinue)) {
                     shouldRecurse = NO;
-                    [self _completeAnimation];
+                    [self endShake];
                 }
             }
             if (shouldRecurse) {
@@ -136,7 +140,7 @@ static const char *ShakeInfoKey = "ShakeInfo";
 
 }
 
-- (void)_completeAnimation {
+- (void)endShake {
     SCShakeInfo *shakeInfo = [self shakeInfo];
     
     if (shakeInfo.shaking) {
@@ -149,10 +153,6 @@ static const char *ShakeInfoKey = "ShakeInfo";
             completionHandler();
         }
     }
-}
-
-- (void)endShaking {
-    [self _completeAnimation];
 }
 
 - (BOOL)isShaking {

@@ -12,7 +12,9 @@ A highly configurable UIView category for shaking a view. You start shaking your
 SCViewShaker works as a category on UIView. It provides the following methods:
      
 ```objective-c
-- (void)beginShakingWithOptions:(SCShakeOptions)shakeOptions force:(CGFloat)force duration:(CGFloat)duration iterationDuration:(CGFloat)iterationDuration completionHandler:(ShakeCompletionHandler)completionHandler
+- (void)shake;
+
+- (void)shakeWithOptions:(SCShakeOptions)shakeOptions force:(CGFloat)force duration:(CGFloat)duration iterationDuration:(CGFloat)iterationDuration completionHandler:(ShakeCompletionHandler)completionHandler
      
 - (void)endShaking
      
