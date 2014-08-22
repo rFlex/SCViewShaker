@@ -16,10 +16,15 @@ SCViewShaker works as a category on UIView. It provides the following methods:
 
 - (void)shakeWithOptions:(SCShakeOptions)shakeOptions force:(CGFloat)force duration:(CGFloat)duration iterationDuration:(CGFloat)iterationDuration completionHandler:(ShakeCompletionHandler)completionHandler
      
-- (void)endShaking
+- (void)endShake
      
 @property (readonly, nonatomic) BOOL isShaking
 ```
+
+*shake* does a small shake on the view for a short amount of time. It was added as a convenience method.
+
+
+*shakeWithOptions:force:duration:iterationDuration:completionHandler:* performs a new shake action with the complete control on how the shake will be done. It takes the follow parameters:
 
 **shakeOptions** is an enum of options that can be activated by using the OR operator (like SCShakeOptionsDirectionRotate | SCShakeOptionsForceInterpolationNone).
 
