@@ -91,5 +91,5 @@ The action at end defines what should happen when the shake completes
 If you are using cocoapods, you can use this project with the following Podfile
 
 ```ruby
-pod "SCViewShaker", "~> 1.0.0"
+pod "SCViewShaker", "~> 1.0"
 ```
