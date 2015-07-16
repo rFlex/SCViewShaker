@@ -26,7 +26,8 @@ typedef enum : NSUInteger {
     SCShakeOptionsAtEndRestart = 256,
     SCShakeOptionsAtEndComplete = 512,
     SCShakeOptionsAtEndContinue = 1024,
-    SCShakeOptionsAutoreverse = 2048
+    SCShakeOptionsAutoreverse = 2048,
+    SCShakeOptionAllowsUserInteraction = 4096
     
 } SCShakeOptions;
 

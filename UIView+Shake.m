@@ -115,7 +115,8 @@ static const char *ShakeInfoKey = "ShakeInfo";
     CGFloat force = shakeInfo.force * interpolationRatio * direction;
     CGFloat iterationDuration = shakeInfo.iterationDuration;
     
-    [UIView animateWithDuration:iterationDuration animations:^{
+    UIViewAnimationOptions animationOptions = HAS_OPT(options, SCShakeOptionAllowsUserInteraction) ? UIViewAnimationOptionAllowUserInteraction : 0;
+    [UIView animateWithDuration:iterationDuration delay:0 options:animationOptions animations:^{
         [self _animate:force shakeInfo:shakeInfo];
     } completion:^(BOOL finished) {
         if (shakeInfo.shaking) {
