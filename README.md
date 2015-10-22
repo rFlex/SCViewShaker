@@ -39,7 +39,7 @@ iterationDuration is how long each shake iteration will last. You may want to se
 
 ```objective-c
 UIView *view = ...; // Grab a view from somewhere
-[view beginShakingWithOptions:SCShakeOptionsDirectionRotate | SCShakeOptionsForceInterpolationExpDown | SCShakeOptionsAtEndRestart | SCShakeOptionsAutoreverse force:0.15 duration:1 iterationDuration:0.03 completionHandler:nil];
+[view shakeWithOptions:SCShakeOptionsDirectionRotate | SCShakeOptionsForceInterpolationExpDown | SCShakeOptionsAtEndRestart | SCShakeOptionsAutoreverse force:0.15 duration:1 iterationDuration:0.03 completionHandler:nil];
 ```
 
 ## Options
